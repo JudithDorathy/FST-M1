@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="FSTTests" thread-count="4" parallel="classes">
+    <!-- Comment out groups to run everything -->
+    <!--
+    <groups>
+        <run>
+            <include name="HeaderTests" />
+        </run>
+    </groups>
+    -->
+    
+    <parameter name="username" value="admin" />
+    <parameter name="password" value="password" />
+    
+    <test name="FSTActivities">
+        <classes>
+            <class name="FST_TestNG.Activity1n" />
+            <class name="FST_TestNG.Activity2n" />
+            <class name="FST_TestNG.Activity3n" />
+            <class name="FST_TestNG.DemoOne" />
+            <class name="FST_TestNG.DemoTwo" />
+        </classes>
+    </test>
+</suite>
