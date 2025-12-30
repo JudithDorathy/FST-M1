@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="ceda551a-4f4f-4900-b472-333ebaf80a91" created="3.63.0" activeEnvironment="Default environment" encryptionMode="Not encrypted" name="REST Project 4" projectVersion="" resourceRoot="" updated="3.63.0 2025-10-21T08:28:07Z" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="932a21bb-1483-48a1-86d6-d42978371925" created="3.63.0" activeEnvironment="Default environment" encryptionMode="Not encrypted" name="REST Project 6" resourceRoot="" projectVersion="" updated="3.63.0 2025-10-21T08:28:07Z" xmlns:con="http://eviware.com/soapui/config">
   <con:settings/>
-  <con:interface xsi:type="con:RestService" id="70b53515-9ca8-4fc4-b654-844cfe6ac220" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://ipwhois.app" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <con:settings id="9ed29deb-e9d9-4f30-93fe-ddbd972f4043"/>
-    <con:definitionCache/>
+  <con:interface xsi:type="con:RestService" id="a2d03073-f082-4733-b647-b8d054f1aee5" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://ipwhois.app" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings id="4ce93483-03ce-4745-bfee-70acd3a2973e"/>
+    <con:definitionCache type="TEXT" rootPart=""/>
     <con:endpoints>
       <con:endpoint>http://ipwhois.app</con:endpoint>
     </con:endpoints>
-    <con:resource name="IP" path="/json/{IP}" id="c5048f89-d7a4-45d8-be33-08e23a5dfdb3">
+    <con:resource name="IP" path="/json/{IP}" id="c726cbb4-93f3-4265-b047-746b6ef4cd2b">
       <con:settings/>
       <con:parameters/>
-      <con:method name="IP" id="1734ce3a-1a78-45e1-8e7b-283b72a16736" method="GET">
+      <con:method name="IP" id="0eeea134-1f73-467d-9049-250aa813dd5d" method="GET">
         <con:settings/>
         <con:parameters>
           <con:parameter required="true">
@@ -26,15 +26,11 @@
           <con:mediaType>application/json; charset=utf-8</con:mediaType>
           <con:status>200</con:status>
           <con:params/>
-          <con:element xmlns:ip="http://ipwhois.app/json/IP">ip:Response</con:element>
+          <con:element xmlns:json="http://ipwhois.app/json/">json:Response</con:element>
         </con:representation>
-        <con:request name="Request 1" id="d3984b1b-09ba-43f6-afc2-294e240f0a58" mediaType="application/json">
+        <con:request name="Request 1" id="fc1d2890-9d1a-4255-946c-7aed53b2554b" mediaType="application/json">
           <con:settings/>
           <con:endpoint>http://ipwhois.app</con:endpoint>
-          <con:credentials>
-            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
           <con:parameters>
             <con:entry key="IP" value="IP"/>
           </con:parameters>
@@ -45,48 +41,54 @@
       </con:method>
     </con:resource>
   </con:interface>
-  <con:testSuite id="50d48994-370f-4098-92c9-a7083a31ac51" name="TestSuite">
-    <con:settings id="3015425c-3398-4567-afd5-bf15242f9a33"/>
+  <con:testSuite id="bcd42a06-6e92-48be-85f3-8d5983607121" name="http://ipwhois.app Test Suite">
+    <con:settings id="e253d92e-5fbb-4510-9d0c-d4882dece8ee"/>
     <con:runType>SEQUENTIAL</con:runType>
-    <con:testCase id="10d456d9-b9b0-42e3-9905-73878e8c9148" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test Case" searchProperties="true" timeout="0">
+    <con:testCase id="b638ee0e-5375-464d-b67b-5b04c08ec303" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="http://ipwhois.app Test Case 1" searchProperties="true" timeout="0">
       <con:settings/>
-      <con:testStep type="datasource" name="DataSource" id="5bf420cc-0191-4a86-8dfb-2c391119da49">
+      <con:testStep type="datasource" name="DataSource" id="f745f17f-545f-4fea-be88-257b49a7b1ce">
         <con:settings/>
         <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:dataSource type="Data Generator">
+          <con:dataSource type="File">
             <con:configuration>
-              <generatedDataCount>3</generatedDataCount>
-              <generatorsTotalNumber>1</generatorsTotalNumber>
-              <lastSelectedProperty>0</lastSelectedProperty>
-              <GeneratorType0>COMP</GeneratorType0>
-              <PropertyName0>IP</PropertyName0>
-              <repetitionCountIP>0</repetitionCountIP>
-              <repeatValuesIP>false</repeatValuesIP>
-              <ComputerAddressTypeIP>IPv4</ComputerAddressTypeIP>
-              <escapeSpaceSequence/>
+              <fileName>C:/Users/JudithDorathy/OneDrive - IBM/Desktop/FST/FST_API/Activity6.txt</fileName>
+              <separator>,</separator>
+              <trim>true</trim>
+              <charset>Cp1252</charset>
+              <quotedValues>false</quotedValues>
             </con:configuration>
           </con:dataSource>
           <con:shared>true</con:shared>
           <con:restartShared>true</con:restartShared>
           <con:property>IP</con:property>
+          <con:property>address</con:property>
           <con:restartOnRun>true</con:restartOnRun>
           <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="GETRequest" id="0f21cead-aab5-440f-9e62-6a932f4627a5">
+      <con:testStep type="restrequest" name="Request 1" id="6b65648a-986d-4be2-8714-21821b0d6b27">
         <con:settings/>
         <con:config service="http://ipwhois.app" resourcePath="/json/{IP}" methodName="IP" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="GETRequest" id="d3984b1b-09ba-43f6-afc2-294e240f0a58" mediaType="application/json">
+          <con:restRequest name="Request 1" id="fc1d2890-9d1a-4255-946c-7aed53b2554b" mediaType="application/json">
             <con:settings>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
             </con:settings>
             <con:endpoint>http://ipwhois.app</con:endpoint>
             <con:request/>
-            <con:originalUri>http://ipwhois.app/json/IP</con:originalUri>
-            <con:assertion type="Valid HTTP Status Codes" id="9643649c-18de-43d3-be92-5defcf5b26c1" name="Valid HTTP Status Codes">
+            <con:originalUri>http://ipwhois.app/json/</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="ef6e607e-ec87-4968-8989-83ed6dfa9378" name="Valid HTTP Status Codes">
               <con:settings/>
               <con:configuration>
                 <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d140bdd7-7cfe-43e1-86db-e883770cf87a" name="JSONPath Match">
+              <con:configuration>
+                <path>$['country']</path>
+                <content>"India"</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
               </con:configuration>
             </con:assertion>
             <con:credentials>
@@ -95,7 +97,7 @@
             </con:credentials>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:parameters>
-              <con:entry key="IP" value="${DataSource#IP}"/>
+              <con:entry key="IP" value="${DataSource#address}"/>
             </con:parameters>
             <con:parameterOrder>
               <con:entry>IP</con:entry>
@@ -103,78 +105,11 @@
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="transfer" name="PropertyTransfer 1" id="6e1d294c-5f17-4a6c-8769-586250508835">
-        <con:settings/>
-        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false">
-            <con:name>city</con:name>
-            <con:sourceType>Response</con:sourceType>
-            <con:sourceStep>GETRequest</con:sourceStep>
-            <con:sourcePath>$['city']</con:sourcePath>
-            <con:targetType>city_name</con:targetType>
-            <con:targetStep>Data Sink</con:targetStep>
-            <con:targetPath/>
-            <con:type>JSONPATH</con:type>
-            <con:upgraded>true</con:upgraded>
-          </con:transfers>
-          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true">
-            <con:name>latitude</con:name>
-            <con:sourceType>Response</con:sourceType>
-            <con:sourceStep>GETRequest</con:sourceStep>
-            <con:sourcePath>$['latitude']</con:sourcePath>
-            <con:targetType>latitude</con:targetType>
-            <con:targetStep>Data Sink</con:targetStep>
-            <con:targetPath/>
-            <con:type>JSONPATH</con:type>
-            <con:upgraded>true</con:upgraded>
-          </con:transfers>
-          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true">
-            <con:name>longitude</con:name>
-            <con:sourceType>Response</con:sourceType>
-            <con:sourceStep>GETRequest</con:sourceStep>
-            <con:sourcePath>$['longitude']</con:sourcePath>
-            <con:targetType>longitude</con:targetType>
-            <con:targetStep>Data Sink</con:targetStep>
-            <con:targetPath/>
-            <con:type>JSONPATH</con:type>
-            <con:upgraded>true</con:upgraded>
-          </con:transfers>
-        </con:config>
-      </con:testStep>
-      <con:testStep type="datasink" name="Data Sink" id="f5eda835-dba0-4e90-8bf1-752567086d3a">
-        <con:settings/>
-        <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:dataSink type="JDBC">
-            <con:configuration>
-              <driver>com.mysql.jdbc.Driver</driver>
-              <connstr>jdbc:mysql://db4free.net:3306/fstm1db?user=fstm1db&amp;password=PASS_VALUE</connstr>
-              <pass>6Y6NowPybq</pass>
-              <Connection>FSTConnection( Default environment )</Connection>
-              <query>insert into coordinates(city_name,latitude,longitude) values (?,?,?);</query>
-              <stored-procedure>false</stored-procedure>
-            </con:configuration>
-          </con:dataSink>
-          <con:properties>
-            <con:property>
-              <con:name>city_name</con:name>
-              <con:value>Madrid</con:value>
-            </con:property>
-            <con:property>
-              <con:name>latitude</con:name>
-              <con:value>40.4167754</con:value>
-            </con:property>
-            <con:property>
-              <con:name>longitude</con:name>
-              <con:value>-3.7037902</con:value>
-            </con:property>
-          </con:properties>
-        </con:config>
-      </con:testStep>
-      <con:testStep type="datasourceloop" name="Data Source Loop" id="98f144de-bca0-40c6-b0a9-17f587f2eb38">
+      <con:testStep type="datasourceloop" name="Data Source Loop" id="80d95e29-ff0e-4027-a27d-67262b4c946f">
         <con:settings/>
         <con:config>
           <dataSourceStep>DataSource</dataSourceStep>
-          <targetStep>GETRequest</targetStep>
+          <targetStep>Request 1</targetStep>
           <discardResults>true</discardResults>
         </con:config>
       </con:testStep>
@@ -186,15 +121,7 @@
   </con:testSuite>
   <con:properties/>
   <con:wssContainer/>
-  <con:databaseConnectionContainer>
-    <con:databaseConnection>
-      <con:name>FSTConnection</con:name>
-      <con:driver>com.mysql.jdbc.Driver</con:driver>
-      <con:connectionString>jdbc:mysql://db4free.net:3306/fstm1db?user=fstm1db&amp;password=PASS_VALUE</con:connectionString>
-      <con:password>6Y6NowPybq</con:password>
-      <con:connectionProperties/>
-    </con:databaseConnection>
-  </con:databaseConnectionContainer>
+  <con:databaseConnectionContainer/>
   <con:jmsConnectionContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
